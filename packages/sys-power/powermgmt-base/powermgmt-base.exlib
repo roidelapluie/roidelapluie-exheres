@@ -6,7 +6,6 @@ require debian-upstream
 DESCRIPTION="Scripts to test if the computer is running on AC power"
 HOMEPAGE="http://packages.debian.org/testing/utils/powermgmt-base"
 SLOT="0"
-DOWNLOADS="http://ftp.de.debian.org/debian/pool/main/p/powermgmt-base/${PN}_${PV}.tar.gz"
 LICENCES="GPL-2"
 WORK="${WORKBASE}/${PN}"
 
