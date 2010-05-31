@@ -8,9 +8,9 @@ DOWNLOADS="http://ftp.de.debian.org/debian/pool/main/p/powermgmt-base/${PN}_${PV
 LICENSE="GPL-2"
 
 DEPENDENCIES="
-	build+run:
-		sys-fs/udev
-		sys-apps/module-init-tools
+    build+run:
+        sys-fs/udev
+        sys-apps/module-init-tools
 "
 
 export_exlib_phases src_unpack src_install
@@ -18,12 +18,12 @@ export_exlib_phases src_unpack src_install
 
 powermgmt-base_src_unpack()
 {
-	default
-	mv ${PN} ${PN}-${PVR}
+    default
+    mv ${PN} ${PN}-${PVR}
 }
 
 powermgmt-base_src_install()
 {
-	dodir /sbin
-	default
+    dodir /sbin
+    default
 }
