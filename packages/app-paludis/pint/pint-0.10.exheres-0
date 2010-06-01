@@ -1,7 +1,0 @@
-# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
-# Distributed under the terms of the GNU General Public License v2
-
-require pint
-DOWNLOADS="http://dev.gentoo.org/~omp/paludis/${PNV}.rb"
-
-PLATFORMS="~x86"
