@@ -5,10 +5,10 @@ SUMMARY="6 scripts to improve your paludis experience"
 DESCRIPTION="paludis-scripts contains:
 * config-decruft
 * depgraph2svg
-* find_scm_owners.rb
+* find_scm_owners.rb: Find wich packages own each scm
 * gimme.rb
 * grex.rb
-* pint.rb"
+* pint.rb: Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
 HOMEPAGE="http://paludis.pioto.org"
 LICENCES="GPL-2"
 SLOT="0"
