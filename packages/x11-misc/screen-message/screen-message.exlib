@@ -33,4 +33,3 @@ screen-message_src_configure()
     sed -i "s/\/games/\/bin/" Makefile.am
     default
 }
-
