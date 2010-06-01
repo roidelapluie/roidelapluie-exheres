@@ -1,0 +1,29 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
+
+DOWNLOADS="http://dev.gentoo.org/~omp/paludis/pint.rb"
+LICENCES="GPL-2"
+SLOT="0"
+WORK=${WORKBASE}
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/ruby
+        sys-apps/paludis[ruby]
+"
+
+export_exlib_phases src_unpack src_install
+
+pint_src_unpack()
+{
+    cp "${FETCHEDDIR}/${ARCHIVES}" "${WORK}"
+}
+
+pint_src_install()
+{
+    dodir /usr/bin
+    install pint.rb "${IMAGE}"/usr/bin
+}
+
