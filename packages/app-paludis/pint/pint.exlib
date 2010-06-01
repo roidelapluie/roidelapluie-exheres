@@ -18,12 +18,11 @@ export_exlib_phases src_unpack src_install
 
 pint_src_unpack()
 {
-    cp "${FETCHEDDIR}/${ARCHIVES}" "${WORK}/pint.rb"
+    edo cp "${FETCHEDDIR}/${ARCHIVES}" "${WORK}/pint.rb"
 }
 
 pint_src_install()
 {
-    dodir /usr/bin
-    install pint.rb "${IMAGE}"/usr/bin
+    dobin pint.rb
 }
 
