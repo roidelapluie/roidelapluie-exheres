@@ -20,10 +20,10 @@ DEPENDENCIES="
     build+run:
         dev-libs/atk
         x11-libs/cairo
-		media-libs/fontconfig
-		media-libs/freetype
-		x11-libs/gtk+
-		x11-libs/pango
+        media-libs/fontconfig
+        media-libs/freetype
+        x11-libs/gtk+
+        x11-libs/pango
 "
 
 export_exlib_phases src_configure
