@@ -12,7 +12,6 @@ DESCRIPTION="paludis-scripts contains:
 HOMEPAGE="http://paludis.pioto.org"
 LICENCES="GPL-2"
 SLOT="0"
-WORK="${WORKBASE}/${PNV}"
 
 DEPENDENCIES="
     build+run:
@@ -24,13 +23,7 @@ export_exlib_phases src_install
 
 paludis-scripts_src_install()
 {
-    for i in config-decruft \
-    depgraph2svg \
-    find_scm_owners.rb \
-    gimme.rb \
-    grex.rb \
-    pint.rb;
-    do dobin $i
-    done
+    dobin config-decruft depgraph2svg find_scm_owners.rb \
+    gimme.rb grex.rb pint.rb
 }
 
