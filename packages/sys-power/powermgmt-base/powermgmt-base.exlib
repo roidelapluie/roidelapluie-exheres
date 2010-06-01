@@ -1,5 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'powermgmt-base-1.30.ebuild' from Gentoo, which is:
+#       Copyright 1999-2009 Gentoo Foundation
 
 require debian-upstream
 
