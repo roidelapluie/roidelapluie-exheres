@@ -15,7 +15,6 @@ SLOT="0"
 
 DEPENDENCIES="
     build+run:
-        dev-lang/ruby
         sys-apps/paludis[ruby]
 "
 
