@@ -1,7 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-DESCRIPTION="Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
+SUMMARY="Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
 HOMEPAGE="http://dev.gentoo.org/~omp/paludis/"
 DOWNLOADS="http://dev.gentoo.org/~omp/paludis/${PNV}.rb"
 LICENCES="GPL-2"
