@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 
 DESCRIPTION="Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
-
-DOWNLOADS="http://dev.gentoo.org/~omp/paludis/pint.rb"
+HOMEPAGE="http://dev.gentoo.org/~omp/paludis/"
+DOWNLOADS="http://dev.gentoo.org/~omp/paludis/${PNV}.rb"
 LICENCES="GPL-2"
 SLOT="0"
-WORK=${WORKBASE}
+WORK="${WORKBASE}"
 
 DEPENDENCIES="
     build+run:
@@ -18,7 +18,7 @@ export_exlib_phases src_unpack src_install
 
 pint_src_unpack()
 {
-    cp "${FETCHEDDIR}/${ARCHIVES}" "${WORK}"
+    cp "${FETCHEDDIR}/${ARCHIVES}" "${WORK}/pint.rb"
 }
 
 pint_src_install()
