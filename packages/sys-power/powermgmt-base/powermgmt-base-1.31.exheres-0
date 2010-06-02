@@ -4,3 +4,4 @@
 require powermgmt-base
 
 PLATFORMS="~x86"
+
