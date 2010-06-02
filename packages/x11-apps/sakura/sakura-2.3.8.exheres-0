@@ -10,3 +10,4 @@ DEPENDENCIES="
         dev-libs/vte[>=0.16.25]
 "
 PLATFORMS="~x86"
+
