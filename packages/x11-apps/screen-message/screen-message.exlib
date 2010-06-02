@@ -14,7 +14,6 @@ HOMEPAGE="http://packages.debian.org/testing/games/sm"
 
 LICENCES="GPL-2"
 SLOT="0"
-MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
@@ -22,17 +21,9 @@ DEPENDENCIES="
         x11-libs/cairo
         media-libs/fontconfig
         media-libs/freetype
-        x11-libs/gtk+
+        x11-libs/gtk+:2
         x11-libs/pango
 "
-
-BUGS_TO=""
-
-REMOTE_IDS=""
-
-UPSTREAM_CHANGELOG=""
-UPSTREAM_DOCUMENTATION=""
-UPSTREAM_RELEASE_NOTES=""
 
 export_exlib_phases src_configure
 

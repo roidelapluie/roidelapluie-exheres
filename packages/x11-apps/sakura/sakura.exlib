@@ -12,13 +12,6 @@ DOWNLOADS="http://pleyades.net/david/projects/sakura/${PNV}.tar.gz"
 
 LICENCES="GPL-2"
 SLOT="0"
-MYOPTIONS=""
 
-BUGS_TO=""
-
-REMOTE_IDS="freashmeat:sakura launchpad:sakura"
-
-UPSTREAM_CHANGELOG=""
-UPSTREAM_DOCUMENTATION=""
-UPSTREAM_RELEASE_NOTES=""
+REMOTE_IDS="freshmeat:sakura launchpad:sakura"
 

@@ -4,8 +4,6 @@
 require distutils [ python_dep=2.6 ]
 
 SUMMARY="Urwid is a console user interface library for Python."
-DESCRIPTION="
-"
 HOMEPAGE="http://excess.org/urwid/"
 DOWNLOADS="http://excess.org/urwid/${PNV}.tar.gz"
 
@@ -19,11 +17,6 @@ DEPENDENCIES="
         ncurses? ( sys-libs/ncurses )
 "
 
-BUGS_TO=""
-
-REMOTE_IDS=""
-
 UPSTREAM_CHANGELOG="http://excess.org/urwid/wiki/ChangeLog"
 UPSTREAM_DOCUMENTATION="http://excess.org/urwid/"
-UPSTREAM_RELEASE_NOTES=""
 

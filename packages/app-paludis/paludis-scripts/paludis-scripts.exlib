@@ -10,24 +10,14 @@ DESCRIPTION="paludis-scripts contains:
 * grex.rb
 * pint.rb: Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
 HOMEPAGE="http://paludis.pioto.org"
-DOWNLOADS=""
 
 LICENCES="GPL-2"
 SLOT="0"
-MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
         sys-apps/paludis[ruby]
 "
-
-BUGS_TO=""
-
-REMOTE_IDS=""
-
-UPSTREAM_CHANGELOG=""
-UPSTREAM_DOCUMENTATION=""
-UPSTREAM_RELEASE_NOTES=""
 
 export_exlib_phases src_install
 
