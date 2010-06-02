@@ -1,0 +1,29 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require distutils [ python_dep=2.6 ]
+
+SUMMARY="Urwid is a console user interface library for Python."
+DESCRIPTION="
+"
+HOMEPAGE="http://excess.org/urwid/"
+DOWNLOADS="http://excess.org/urwid/${PNV}.tar.gz"
+
+LICENCES="LGPL"
+SLOT="0"
+MYOPTIONS="ncurses"
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/python:2.6
+        ncurses? ( sys-libs/ncurses )
+"
+
+BUGS_TO=""
+
+REMOTE_IDS=""
+
+UPSTREAM_CHANGELOG="http://excess.org/urwid/wiki/ChangeLog"
+UPSTREAM_DOCUMENTATION="http://excess.org/urwid/"
+UPSTREAM_RELEASE_NOTES=""
+
