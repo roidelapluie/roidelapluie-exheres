@@ -1,7 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SUMMARY="6 scripts to improve your paludis experience"
+SUMMARY="Six scripts to improve your paludis experience"
 DESCRIPTION="paludis-scripts contains:
 * config-decruft
 * depgraph2svg
@@ -10,19 +10,27 @@ DESCRIPTION="paludis-scripts contains:
 * grex.rb
 * pint.rb: Parse a Paludis log file and output install times of one or more packages, defaulting to all packages if none are specified."
 HOMEPAGE="http://paludis.pioto.org"
+DOWNLOADS=""
+
 LICENCES="GPL-2"
 SLOT="0"
+MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
         sys-apps/paludis[ruby]
 "
 
-export_exlib_phases src_install
+BUGS_TO=""
+
+REMOTE_IDS=""
+
+UPSTREAM_CHANGELOG=""
+UPSTREAM_DOCUMENTATION=""
+UPSTREAM_RELEASE_NOTES=""
 
 paludis-scripts_src_install()
 {
     dobin config-decruft depgraph2svg find_scm_owners.rb \
     gimme.rb grex.rb pint.rb
 }
-
