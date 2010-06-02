@@ -6,10 +6,13 @@
 require debian-upstream
 
 SUMMARY="Scripts to test if the computer is running on AC power"
+DESCRIPTION="
+"
 HOMEPAGE="http://packages.debian.org/testing/utils/powermgmt-base"
-SLOT="0"
+
 LICENCES="GPL-2"
-WORK="${WORKBASE}/${PN}"
+SLOT="0"
+MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
@@ -17,11 +20,21 @@ DEPENDENCIES="
         sys-apps/module-init-tools
 "
 
-export_exlib_phases src_install
+BUGS_TO=""
 
+REMOTE_IDS=""
+
+UPSTREAM_CHANGELOG=""
+UPSTREAM_DOCUMENTATION=""
+UPSTREAM_RELEASE_NOTES=""
+
+WORK="${WORKBASE}/${PN}"
+
+export_exlib_phases src_install
 
 powermgmt-base_src_install()
 {
     dodir /sbin
     default
 }
+
