@@ -7,7 +7,7 @@ SUMMARY="Urwid is a console user interface library for Python."
 HOMEPAGE="http://excess.org/urwid/"
 DOWNLOADS="http://excess.org/urwid/${PNV}.tar.gz"
 
-LICENCES="LGPL"
+LICENCES="LGPL-2.1"
 SLOT="0"
 MYOPTIONS="ncurses"
 

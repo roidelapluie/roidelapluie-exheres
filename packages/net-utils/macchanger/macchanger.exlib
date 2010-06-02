@@ -7,7 +7,7 @@ DESCRIPTION="
 HOMEPAGE="http://www.alobbs.com/macchanger/"
 DOWNLOADS="ftp://ftp.gnu.org/gnu/macchanger/${PNV}.tar.gz"
 
-LICENCES="GPL"
+LICENCES="GPL-2"
 SLOT="0"
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
