@@ -7,3 +7,4 @@ SCM_REPOSITORY="git://git.pioto.org/paludis-scripts.git"
 require scm-git
 
 PLATFORMS="~x86"
+

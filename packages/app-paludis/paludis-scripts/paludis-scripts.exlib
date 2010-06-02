@@ -29,6 +29,8 @@ UPSTREAM_CHANGELOG=""
 UPSTREAM_DOCUMENTATION=""
 UPSTREAM_RELEASE_NOTES=""
 
+export_exlib_phases src_install
+
 paludis-scripts_src_install()
 {
     dobin config-decruft depgraph2svg find_scm_owners.rb \
