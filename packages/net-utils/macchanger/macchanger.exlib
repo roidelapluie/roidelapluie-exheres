@@ -2,10 +2,26 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="A GNU/Linux utility for viewing/manipulating the MAC address of network interfaces"
+DESCRIPTION="
+"
 HOMEPAGE="http://www.alobbs.com/macchanger/"
-SLOT="0"
-
 DOWNLOADS="ftp://ftp.gnu.org/gnu/macchanger/${PNV}.tar.gz"
+
+LICENCES=""
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+"
+
+BUGS_TO=""
+
+REMOTE_IDS=""
+
+UPSTREAM_CHANGELOG=""
+UPSTREAM_DOCUMENTATION=""
+UPSTREAM_RELEASE_NOTES=""
 
 export_exlib_phases src_configure
 
