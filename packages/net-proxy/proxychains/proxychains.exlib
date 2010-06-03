@@ -1,7 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require sourceforge [ suffix=.tar.gz]
+require sourceforge [ suffix=tar.gz ]
 
 SUMMARY="Force any tcp connections to flow through a proxy (or proxy chain)."
 
