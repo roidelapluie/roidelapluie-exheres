@@ -1,0 +1,42 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require pam
+
+SUMMARY="virtual console lock program"
+DESCRIPTION="vlock is a program to lock one or more sessions on the Linux console. This is especially useful for Linux machines which have multiple users with access to the console. One user may lock his or her session(s) while still allowing other users to use the system on other virtual consoles. If desired, the entire console may be locked and virtual console switching disabled."
+HOMEPAGE="http://cthulhu.c3d2.de/~toidinamai/vlock/vlock.html"
+DOWNLOADS="http://cthulhu.c3d2.de/~toidinamai/vlock/archive/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+MYOPTIONS="pam"
+
+DEPENDENCIES="
+    build+run:
+        pam? ( sys-libs/pam )
+"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=(
+    --hates=host
+    --hates=build
+    --hates=infodir
+    --hates=datadir
+    --hates=docdir
+    --hates=sysconfdir
+    --hates=localstatedir
+    --hates=disable-dependency-tracking
+    --hates=disable-silent-rules
+    --hates=enable-fast-install
+)
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( pam )
+
+src_install()
+{
+    default
+
+    if option pam ; then
+        pamd_mimic_system vlock auth
+    fi
+}
+
