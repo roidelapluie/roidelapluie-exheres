@@ -3,11 +3,5 @@
 
 require sakura
 
-DEPENDENCIES="
-    build+run:
-        dev-libs/glib:2[>=2.14]
-        x11-libs/gtk+:2[>=2.10]
-        dev-libs/vte[>=0.16.25]
-"
 PLATFORMS="~x86"
 
