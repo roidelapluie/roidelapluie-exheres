@@ -27,8 +27,7 @@ DEPENDENCIES="
 
 export_exlib_phases src_configure
 
-screen-message_src_configure()
-{
+screen-message_src_configure() {
     edo sed -i "s/\/games/\/bin/" Makefile.am
     default
 }

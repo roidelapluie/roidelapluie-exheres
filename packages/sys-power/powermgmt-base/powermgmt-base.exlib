@@ -21,8 +21,7 @@ WORK="${WORKBASE}/${PN}"
 
 export_exlib_phases src_install
 
-powermgmt-base_src_install()
-{
+powermgmt-base_src_install() {
     dodir /sbin
     default
 }
