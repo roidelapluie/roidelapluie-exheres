@@ -3,7 +3,7 @@
 
 require sourceforge [ suffix=tar.gz ]
 
-SUMMARY="Force any tcp connections to flow through a proxy (or proxy chain)."
+SUMMARY="Force any tcp connection to flow through a proxy (or proxy chain)."
 
 LICENCES="GPL-2"
 SLOT="0"
