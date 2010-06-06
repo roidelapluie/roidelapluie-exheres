@@ -20,21 +20,19 @@ DEPENDENCIES="
         pam? ( sys-libs/pam )
 "
 
-DEFAULT_SRC_CONFIGURE_PARAMS=(
-    --hates=host
-    --hates=build
-    --hates=infodir
-    --hates=datadir
-    --hates=docdir
-    --hates=sysconfdir
-    --hates=localstatedir
-    --hates=disable-dependency-tracking
-    --hates=disable-silent-rules
-    --hates=enable-fast-install
-)
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( pam )
+export_exlib_phases src_configure src_install
 
-src_install() {
+vlock_src_configure(){
+    if option pam; then
+        myconf="--enable-pam"
+    else
+        myconf="--enable-shadow"
+    fi
+
+    edo ./configure --prefix=/usr --mandir=/usr/share/man --libdir=/usr/lib ${myconf}
+}
+
+vlock_src_install() {
     default
 
     if option pam ; then
