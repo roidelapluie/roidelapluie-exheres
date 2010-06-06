@@ -1,0 +1,7 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gecko-mediaplayer
+
+PLATFORMS="~x86"
+
