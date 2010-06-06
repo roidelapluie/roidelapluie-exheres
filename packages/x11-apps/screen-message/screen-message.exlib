@@ -4,12 +4,12 @@
 require debian-upstream [ suffix=.orig.tar.gz ]
 
 SUMMARY="Displays a short text fullscreen"
-DESCRIPTION="Screen Message will display a given multi-line message as large as possible, fullscreen
-and black on white. You can specify the text either when launching sm, or edit it while the program
-is running.
+DESCRIPTION="Screen Message will display a given multi-line message as large as possible,
+fullscreen and black on white. You can specify the text either when launching sm, or edit it while
+the program is running.
 
-It is useful to send messages across a room, e.g. during an university lecture. For fast startup, it
-is recommended to bind it to a key in your Desktop Environment."
+It is useful to send messages across a room, e.g. during an university lecture. For fast startup,
+it is recommended to bind it to a key in your Desktop Environment."
 HOMEPAGE="http://packages.debian.org/testing/games/sm"
 
 LICENCES="GPL-2"
@@ -20,7 +20,7 @@ DEPENDENCIES="
         dev-libs/atk
         x11-libs/cairo
         media-libs/fontconfig
-        media-libs/freetype
+        media-libs/freetype:2
         x11-libs/gtk+:2
         x11-libs/pango
 "
