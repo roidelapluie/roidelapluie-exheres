@@ -15,7 +15,7 @@ LICENCES="GPL-2"
 SLOT="0"
 
 DEPENDENCIES="
-    build+run:
+    run:
         sys-apps/paludis[ruby]
 "
 
