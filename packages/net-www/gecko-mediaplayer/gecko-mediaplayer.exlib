@@ -17,13 +17,3 @@ DEPENDENCIES="
         media-video/gnome-mplayer[>=${PV}]
 "
 
-BUGS_TO=""
-
-REMOTE_IDS=""
-
-UPSTREAM_CHANGELOG=""
-UPSTREAM_DOCUMENTATION=""
-UPSTREAM_RELEASE_NOTES=""
-
-
-
