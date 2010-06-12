@@ -13,7 +13,6 @@ MYOPTIONS="ncurses"
 
 DEPENDENCIES="
     build+run:
-        dev-lang/python:2.6
         ncurses? ( sys-libs/ncurses )
 "
 
