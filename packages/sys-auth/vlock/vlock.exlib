@@ -17,6 +17,7 @@ MYOPTIONS="pam"
 
 DEPENDENCIES="
     build+run:
+        group/vlock
         pam? ( sys-libs/pam )
 "
 
