@@ -1,0 +1,12 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require distutils [ python_dep=2.6 ] sourceforge [ suffix=tar.gz ]
+
+SUMMARY="Python IRC client library"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+MYOPTIONS=""
+
+
