@@ -1,0 +1,29 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require launchpad [ branch=trunk suffix=tar.bz2 ]
+
+SUMMARY="Redshift color temperature adjustment"
+DESCRIPTION="Redshift adjusts the color temperature of your screen according to your surroundings.
+This may help your eyes hurt less if you are working in front of the screen at night."
+HOMEPAGE="http://jonls.dk/redshift/"
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS="gtk"
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libX11[xcb]
+        x11-libs/libXxf86vm
+        sys-devel/gettext
+        gtk? ( dev-python/pygtk )
+"
+
+export_exlib_phases src_configure
+
+redshift_src_configure() {
+    econf --enable-randr enable-vidmode \
+        $(option_enable gtk)
+}
+
