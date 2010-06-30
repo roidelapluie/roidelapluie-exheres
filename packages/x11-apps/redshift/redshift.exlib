@@ -17,7 +17,7 @@ DEPENDENCIES="
         x11-libs/libX11[xcb]
         x11-libs/libXxf86vm
         sys-devel/gettext
-        gtk? ( dev-python/pygtk )
+        gtk? ( dev-python/pygtk:2 )
 "
 
 export_exlib_phases src_configure
