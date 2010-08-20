@@ -41,6 +41,7 @@ gnokii_src_configure() {
         $(option_enable bluetooth) \
         $(option_enable libusb) \
         $(option_enable ical libical) \
+        $(option_enable pcsc libpcsclite) \
         $(option_enable mysql) \
         $(option_enable postgresql postgres) \
         $(option_enable smsd) \
