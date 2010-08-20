@@ -1,0 +1,49 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Tools and user space driver for use with mobile phones"
+DESCRIPTION="gnokii allows you to communicate with the phone over the serial cable connection, usb
+connection (support depends mostly on the operating system level support), infrared connection and
+bluetooth connection.
+"
+HOMEPAGE="http://www.gnokii.org/"
+DOWNLOADS="http://www.gnokii.org/download/gnokii/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+MYOPTIONS="X bluetooth postgresql mysql ical pcsc libusb
+    libusb [[ description =  [ Adds support for USB devices ] ]]
+    pcsc [[ description = [ Adds support for pcsclite ] ]]
+    ical [[ description = [ Phone book storage using libical ] ]]
+    smsd [[ description = [ A deamon that simplifies operation of sending and receiving SMSes to the
+    database operations. ] ]]
+    smsd? ( ( mysql postgresql ) [[ number-selected = at-least-one ]] )
+"
+DEPENDENCIES="
+    build+run:
+        X? ( x11-libs/libX11
+            dev-libs/glib:2 )
+        bluetooth? ( net-wireless/bluez )
+        pcsc? ( sys-apps/pcsc-lite )
+        libusb? ( dev-libs/libusb:0.1 )
+        ical? ( office-libs/libical )
+        mysql? ( dev-db/mysql )
+        postgresql? ( dev-db/postgresql )
+"
+UPSTREAM_CHANGELOG=""
+UPSTREAM_DOCUMENTATION="http://wiki.gnokii.org/index.php/Main_Page"
+UPSTREAM_RELEASE_NOTES="http://www.gnokii.org/download/gnokii/${PNV}.txt"
+
+export_exlib_phases src_configure
+
+gnokii_src_configure() {
+    econf \
+        $(option_enable bluetooth) \
+        $(option_enable libusb) \
+        $(option_enable ical libical) \
+        $(option_enable mysql) \
+        $(option_enable postgresql postgres) \
+        $(option_enable smsd) \
+        $(option_with X x)
+}
+
