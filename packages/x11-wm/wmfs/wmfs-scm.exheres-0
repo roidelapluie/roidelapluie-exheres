@@ -1,0 +1,38 @@
+# Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://git.wmfs.info/wmfs.git"
+require scm-git
+
+SUMMARY="Window Manager From Scratch"
+DESCRIPTION="
+WMFS is a lightweight and highly configurable tiling window manager for X.
+"
+HOMEPAGE="http://wmfs.info/projects/wmfs"
+DOWNLOADS=""
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~x86"
+MYOPTIONS="xrandr imlib2 xinerama"
+
+DEPENDENCIES="
+    build+run:
+        xrandr? ( x11-libs/libXrandr )
+        xinerama? ( x11-libs/libXinerama )
+        imlib2? ( media-libs/imlib2[X] )
+"
+
+src_configure() {
+    ! option xrandr && myconf+=" --without-xrandr"
+    ! option xinerama && myconf+=" --without-xinerama"
+    ! option imlib2 && myconf+=" --without-imlib2"
+
+    edo ./configure --prefix /usr --man-prefix /usr/man --xdg-config-dir /etc/xdg $myconf
+}
+
+
+BUGS_TO=""
+
+
+
