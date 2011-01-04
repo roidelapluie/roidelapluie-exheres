@@ -14,7 +14,7 @@ MYOPTIONS="gtk"
 
 DEPENDENCIES="
     build+run:
-        x11-libs/libX11[xcb]
+        x11-libs/libX11[xcb(+)]
         x11-libs/libXxf86vm
         sys-devel/gettext
         gtk? ( gnome-bindings/pygtk:2 )
