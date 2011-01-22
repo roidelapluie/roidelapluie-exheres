@@ -1,7 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require sourceforge [ suffix=src.tar.gz ]
+require sourceforge [ suffix=src.tar.gz ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
 SUMMARY="A simple action game modeled after the lightcycle sequence of the movie Tron."
 
@@ -19,8 +19,19 @@ DEPENDENCIES="
 
 export_exlib_phases src_install
 
+export_exlib_phases src_prepare
+
+armagetronad_src_prepare(){
+    edo sed -i -e 's/png_check_sig/png_sig_cmp/' configure.ac
+    edo sed -i -e '/^SUBDIRS/s/desktop//' Makefile.am
+    eautoreconf
+}
+
+
 armagetronad_src_install(){
     dodir /usr
     default
 }
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --disable-uninstall )
 
