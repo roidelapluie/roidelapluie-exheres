@@ -3,5 +3,5 @@
 
 require urwid
 
-PLATFORMS="~x86"
+PLATFORMS="~amd64 ~x86"
 
