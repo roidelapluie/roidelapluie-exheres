@@ -3,4 +3,4 @@
 
 require sakura
 
-PLATFORMS="~x86"
+PLATFORMS="~x86 ~amd64"
