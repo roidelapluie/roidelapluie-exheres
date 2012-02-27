@@ -30,7 +30,7 @@ vlock_src_configure(){
         myconf="--enable-shadow"
     fi
 
-    edo ./configure --prefix=/usr --mandir=/usr/share/man --libdir=/usr/lib ${myconf}
+    edo ./configure --prefix=/usr --mandir=/usr/share/man --libdir=/usr/${LIBDIR} ${myconf}
 }
 
 vlock_src_install() {
