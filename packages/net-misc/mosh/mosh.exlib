@@ -23,11 +23,6 @@ DEPENDENCIES="
                   dev-perl/IO-Tty )
 
 "
-export_exlib_phases src_prepare
-
-mosh_src_prepare() {
-    edo ./autogen.sh
-}
 
 LICENCES="GPL-3"
 SLOT="0"
