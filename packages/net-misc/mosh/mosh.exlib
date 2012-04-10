@@ -23,18 +23,10 @@ DEPENDENCIES="
                   dev-perl/IO-Tty )
 
 "
-export_exlib_phases src_prepare src_configure
+export_exlib_phases src_prepare
 
 mosh_src_prepare() {
     edo ./autogen.sh
-}
-
-mosh_src_configure() {
-    econf \
-        $(option_enable client) \
-        $(option_enable server) \
-        $(option_enable examples) \
-        --without-utempter
 }
 
 LICENCES="GPL-3"
