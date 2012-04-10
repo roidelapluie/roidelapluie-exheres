@@ -32,6 +32,5 @@ mosh_src_prepare() {
 LICENCES="GPL-3"
 SLOT="0"
 
-DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=enable-fast-install )
-DEFAULT_SRC_CONFIGURE_OPTION_WITHS="utempter"
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES="client server examples"
+DEFAULT_SRC_CONFIGURE_PARAMS=( --without-utempter --hates=enable-fast-install )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( client server examples )
