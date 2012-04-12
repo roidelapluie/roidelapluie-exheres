@@ -14,6 +14,7 @@ DEPENDENCIES="
         dev-libs/xulrunner
         dev-libs/nspr
         dev-libs/dbus-glib[>=0.70]
+        media-libs/gmtk
         media-video/gnome-mplayer[>=${PV}]
 "
 
