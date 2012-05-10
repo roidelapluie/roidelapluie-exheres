@@ -9,6 +9,7 @@ HOMEPAGE="http://mosh.mit.edu/"
 DOWNLOADS="https://github.com/downloads/keithw/mosh/${PNV}.tar.gz"
 
 MYOPTIONS="examples
+    utempter
     client [[ description = [ compile mosh-client ] ]]
     server [[ description = [ compile mosh-server ] ]]
     ( client server ) [[ number-selected = at-least-one ]]
@@ -19,6 +20,7 @@ DEPENDENCIES="
         dev-libs/protobuf
         sys-libs/ncurses
         net-misc/openssh
+        utempter? ( x11-libs/libutempter )
         client? ( dev-lang/perl
                   dev-perl/IO-Tty )
 
@@ -27,5 +29,8 @@ DEPENDENCIES="
 LICENCES="GPL-3"
 SLOT="0"
 
-DEFAULT_SRC_CONFIGURE_PARAMS=( --without-utempter --hates=enable-fast-install )
+UPSTREAM_CHANGELOG="https://github.com/keithw/mosh/blob/master/ChangeLog"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=enable-fast-install )
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( utempter )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( client server examples )
