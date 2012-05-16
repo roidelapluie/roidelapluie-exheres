@@ -4,4 +4,12 @@
 require sakura
 
 PLATFORMS="~x86 ~amd64"
+DOWNLOADS="http://pleyades.net/david/projects/sakura/${PNV}.tar.gz"
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/glib:2[>=2.20]
+        x11-libs/gtk+:2[>=2.16]
+        dev-libs/vte:0[>=0.26]
+"
 

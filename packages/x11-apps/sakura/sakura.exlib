@@ -11,15 +11,8 @@ Current terminal emulators based on VTE are  gnome-terminal, XFCE Terminal, Term
 sample program included in the vte sources. The differences between sakura and the last one are
 that it uses a notebook to provide several terminals in one window and adds a contextual menu with
 some basic options. No more no less."
-HOMEPAGE="http://pleyades.net/david/sakura.php"
-DOWNLOADS="http://pleyades.net/david/projects/sakura/${PNV}.tar.gz"
+HOMEPAGE="http://pleyades.net/david/projects/sakura"
 
-DEPENDENCIES="
-    build+run:
-        dev-libs/glib:2[>=2.20]
-        x11-libs/gtk+:2[>=2.16]
-        dev-libs/vte:0[>=0.26]
-"
 LICENCES="GPL-2"
 SLOT="0"
 

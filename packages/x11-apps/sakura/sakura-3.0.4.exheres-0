@@ -1,0 +1,14 @@
+# Copyright 2012 Kevin Decherf <kevin@kdecherf.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require sakura launchpad [ suffix=tar.bz2 branch=trunk ]
+
+PLATFORMS="~x86 ~amd64"
+
+DEPENDENCIES="
+   build+run:
+        dev-libs/glib:2[>=2.20]
+        x11-libs/gtk+:3[>=3.0]
+        dev-libs/vte:3.0[>=0.30]
+"
+
