@@ -1,9 +1,12 @@
 # Copyright 2012 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SUMMARY="Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes."
+SUMMARY="Mosh is a robust replacement for SSH".
 
-DESCRIPTION="Mosh is a replacement for SSH. It's more robust and responsive, especially over Wi-Fi, cellular, and long-distance links."
+DESCRIPTION="Remote terminal application that allows roaming, supports
+intermittent connectivity, and provides intelligent local echo and line
+editing of user keystrokes. Mosh is a replacement for SSH. It's more robust
+and responsive, especially over Wi-Fi, cellular, and long-distance links." 
 
 HOMEPAGE="http://mosh.mit.edu/"
 DOWNLOADS="https://github.com/downloads/keithw/mosh/${PNV}.tar.gz"
