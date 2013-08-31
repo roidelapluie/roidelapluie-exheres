@@ -20,4 +20,3 @@ src_prepare() {
     # DOCDIR is unavailable
     edo sed 's/\/doc\/sakura/\/doc\/sakura-3.1.0/' -i CMakeLists.txt
 }
-
