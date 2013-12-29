@@ -14,10 +14,10 @@ MYOPTIONS="gtk"
 
 DEPENDENCIES="
     build+run:
+        sys-devel/gettext
         x11-libs/libX11[xcb(+)]
         x11-libs/libXxf86vm
-        sys-devel/gettext
-        gtk? ( 
+        gtk? (
             dev-python/pyxdg
             gnome-bindings/pygtk:2
         )
@@ -26,7 +26,7 @@ DEPENDENCIES="
 export_exlib_phases src_configure
 
 redshift_src_configure() {
-    econf --enable-randr enable-vidmode \
-        $(option_enable gtk)
+    # randr and vidmode modes are enabled by default
+    econf $(option_enable gtk gui)
 }
 
