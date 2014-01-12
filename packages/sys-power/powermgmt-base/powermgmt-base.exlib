@@ -13,8 +13,8 @@ SLOT="0"
 
 DEPENDENCIES="
     build+run:
+        sys-apps/kmod
         sys-apps/systemd
-        || ( sys-apps/kmod sys-apps/module-init-tools )
 "
 
 WORK="${WORKBASE}/${PN}"
