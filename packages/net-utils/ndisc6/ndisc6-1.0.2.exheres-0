@@ -1,0 +1,22 @@
+# Copyright 2014 Julien Pivotto <roidelapluie@inuits.eu>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="IPv6 diagnostic tools"
+HOMEPAGE="http://www.remlab.net/${PN}/"
+
+DOWNLOADS="http://www.remlab.net/files/${PN}/${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES=""
+
+src_install() {
+    default
+
+    keepdir /var/lib/run/rdnssd
+
+}
+
