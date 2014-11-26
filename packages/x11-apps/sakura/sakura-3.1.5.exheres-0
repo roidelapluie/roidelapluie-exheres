@@ -11,8 +11,8 @@ PLATFORMS="~amd64 ~x86"
 DEPENDENCIES="
     build+run:
         dev-libs/glib:2[>=2.20]
-        dev-libs/vte:3.0[>=0.30]
-        x11-libs/gtk+:3[>=3.0]
+        dev-libs/vte:3.0
+        x11-libs/gtk+:3
         x11-libs/libXft
 "
 
