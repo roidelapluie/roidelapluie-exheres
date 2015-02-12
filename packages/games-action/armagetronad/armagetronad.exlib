@@ -1,7 +1,8 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
+# Copyright 2015 Xavier Barrachina <xv.barrachina@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require sourceforge [ suffix=src.tar.gz ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
+require sourceforge [ suffix=src.tar.gz ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 ] ]
 
 SUMMARY="A simple action game modeled after the lightcycle sequence of the movie Tron."
 
@@ -11,10 +12,17 @@ LICENCES="GPL-2"
 
 DEPENDENCIES="
     build+run:
-        media-libs/SDL
-        media-libs/SDL_image
-        media-libs/SDL_sound
-        media-libs/jpeg
+        dev-libs/libxml2:2.0[>=2.6.12]
+        media-libs/SDL:0[~>1.2.1]
+        media-libs/SDL_image[~>1.2.1]
+        media-libs/SDL_sound[>=1.0.3]
+        media-libs/jpeg:=[>=8]
+        media-libs/libpng:=[>=1.2]
+        sys-libs/zlib[>=1.2]
+        x11-dri/glu[>=9.0.0]
+        x11-libs/libICE[>=1.0.9]
+        x11-libs/libSM[>=1.2]
+        x11-libs/libX11[>=1.6.2]
 "
 
 export_exlib_phases src_install
