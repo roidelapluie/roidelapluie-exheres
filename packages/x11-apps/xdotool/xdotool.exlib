@@ -21,13 +21,17 @@ DEPENDENCIES="
 "
 
 DEFAULT_SRC_COMPILE_PARAMS=(
-	PREFIX=/usr
-	INSTALLLIB=/usr/${LIBDIR}
+    PREFIX=/usr
+    INSTALLBIN=/usr/$(exhost --target)/bin
+    INSTALLINCLUDE=/usr/$(exhost --target)/include
+    INSTALLLIB=/usr/$(exhost --target)/lib
 )
 
 DEFAULT_SRC_INSTALL_PARAMS=(
-	PREFIX=/usr
-	INSTALLLIB=/usr/${LIBDIR}
-	INSTALLMAN=/usr/share/man
+    PREFIX=/usr
+    INSTALLBIN=/usr/$(exhost --target)/bin
+    INSTALLINCLUDE=/usr/$(exhost --target)/include
+    INSTALLLIB=/usr/$(exhost --target)/lib
+    INSTALLMAN=/usr/share/man
 )
 
