@@ -21,17 +21,12 @@ DEPENDENCIES="
         pam? ( sys-libs/pam )
 "
 
-export_exlib_phases src_configure src_install
+export_exlib_phases src_install
 
-vlock_src_configure(){
-    if option pam; then
-        myconf="--enable-pam"
-    else
-        myconf="--enable-shadow"
-    fi
-
-    edo ./configure --prefix=/usr --mandir=/usr/share/man --libdir=/usr/${LIBDIR} ${myconf}
-}
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
+    pam
+    '!pam shadow'
+)
 
 vlock_src_install() {
     default
