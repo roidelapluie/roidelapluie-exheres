@@ -14,7 +14,7 @@ DEPENDENCIES="
     build+run:
         dev-libs/libxml2:2.0[>=2.6.12]
         media-libs/SDL:0[~>1.2.1]
-        media-libs/SDL_image[~>1.2.1]
+        media-libs/SDL_image:1[~>1.2.1]
         media-libs/SDL_sound[>=1.0.3]
         media-libs/jpeg:=[>=8]
         media-libs/libpng:=[>=1.2]
