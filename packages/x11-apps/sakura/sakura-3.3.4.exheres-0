@@ -1,0 +1,26 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Which is based upon the exheres:
+# Copyright 2012 Kevin Decherf <kevin@kdecherf.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake [ api=2 ] freedesktop-desktop launchpad [ suffix=tar.bz2 branch=trunk ] sakura
+
+PLATFORMS="~amd64 ~x86"
+
+DEPENDENCIES="
+    build:
+        dev-lang/perl:* [[ note = [ For pod2man ] ]]
+        virtual/pkg-config
+    build+run:
+        dev-libs/glib:2[>=2.40]
+        dev-libs/vte:2.91
+        x11-libs/gtk+:3[>=3.12]
+        x11-libs/libXft
+"
+
+src_prepare() {
+    # DOCDIR is unavailable
+    edo sed 's/\/doc\/sakura/\/doc\/sakura-${VERSION}/' -i "${CMAKE_SOURCE}"/CMakeLists.txt
+}
+
