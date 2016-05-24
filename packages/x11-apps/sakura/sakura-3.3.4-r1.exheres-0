@@ -20,7 +20,8 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    # DOCDIR is unavailable
-    edo sed 's/\/doc\/sakura/\/doc\/sakura-${VERSION}/' -i "${CMAKE_SOURCE}"/CMakeLists.txt
+    edo cd "${CMAKE_SOURCE}"
+
+    expatch "${FILES}"/${PNV}-Use-GNUInstallDirs.patch
 }
 

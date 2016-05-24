@@ -1,0 +1,92 @@
+From c116f39931e57713f485664717841f858dd6c8d9 Mon Sep 17 00:00:00 2001
+From: Julian Ospald <hasufell@posteo.de>
+Date: Tue, 24 May 2016 21:32:40 +0200
+Subject: [PATCH] Use GNUInstallDirs
+Upstream: no
+
+This allows better control over the install destinations.
+---
+ CMakeLists.txt    | 14 ++++++++------
+ po/CMakeLists.txt |  2 +-
+ src/sakura.c      |  4 ++--
+ 3 files changed, 11 insertions(+), 9 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 44095e3..80fa947 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,6 +7,7 @@ SET (AUTHOR "David Gómez Espinosa" INTERNAL "Author")
+ SET (VERSION "3.3.4")
+ 
+ 
++INCLUDE (GNUInstallDirs)
+ INCLUDE (FindPkgConfig)
+ 
+ IF (NOT PKG_CONFIG_FOUND)
+@@ -32,7 +33,8 @@ FIND_PROGRAM(POD2MAN pod2man)
+ MESSAGE ("pod2man executable is" ${POD2MAN})	
+ 
+ ADD_DEFINITIONS (-DVERSION=\\\"${VERSION}\\\")
+-ADD_DEFINITIONS (-DDATADIR=\\\"${CMAKE_INSTALL_PREFIX}/share\\\")
++ADD_DEFINITIONS (-DLOCALEDIR=\\\"${CMAKE_INSTALL_FULL_LOCALEDIR}\\\")
++ADD_DEFINITIONS (-DPIXMAPSDIR=\\\"${CMAKE_INSTALL_FULL_DATAROOTDIR}/pixmaps\\\")
+ ADD_DEFINITIONS (-DBUILDTYPE=\\\"${CMAKE_BUILD_TYPE}\\\")
+ 
+ IF (${CMAKE_BUILD_TYPE} MATCHES "Debug")
+@@ -48,13 +50,13 @@ ADD_EXECUTABLE (sakura src/sakura.c)
+ 
+ ADD_SUBDIRECTORY (po)
+ 
+-INSTALL (TARGETS sakura RUNTIME DESTINATION bin)	
+-INSTALL (FILES sakura.desktop DESTINATION share/applications)
+-INSTALL (FILES terminal-tango.svg DESTINATION share/pixmaps)
++INSTALL (TARGETS sakura RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
++INSTALL (FILES sakura.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
++INSTALL (FILES terminal-tango.svg DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pixmaps)
+ IF (POD2MAN)	
+-	INSTALL (FILES ${sakura_BINARY_DIR}/sakura.1 DESTINATION share/man/man1)	
++	INSTALL (FILES ${sakura_BINARY_DIR}/sakura.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+ ENDIF (POD2MAN)
+-INSTALL (FILES INSTALL DESTINATION share/doc/sakura)	
++INSTALL (FILES INSTALL DESTINATION ${CMAKE_INSTALL_DOCDIR})
+ 
+ FILE (GLOB MO_FILES po/*.mo)
+ 
+diff --git a/po/CMakeLists.txt b/po/CMakeLists.txt
+index a710347..cfe380a 100644
+--- a/po/CMakeLists.txt
++++ b/po/CMakeLists.txt
+@@ -27,7 +27,7 @@ ELSE(NOT MSGFMT)
+ 				COMMAND ${MSGFMT} --check -o ${_moFile} ${_poFile} 
+ 				DEPENDS ${_poFile})
+ 		INSTALL(FILES ${CMAKE_BINARY_DIR}/po/${_moFile}
+-			   	DESTINATION share/locale/${_lang}/LC_MESSAGES/
++			   	DESTINATION ${CMAKE_INSTALL_LOCALEDIR}/${_lang}/LC_MESSAGES/
+ 			   	RENAME ${catalogname}.mo)
+ 	ENDFOREACH(_poFile ${PO_FILES})
+ 
+diff --git a/src/sakura.c b/src/sakura.c
+index 6e81968..61401fb 100644
+--- a/src/sakura.c
++++ b/src/sakura.c
+@@ -2199,7 +2199,7 @@ sakura_init()
+ 	if (option_icon) {
+ 		icon_path = g_strdup_printf("%s", option_icon);
+ 	} else {
+-		icon_path = g_strdup_printf(DATADIR "/pixmaps/%s", sakura.icon);
++		icon_path = g_strdup_printf(PIXMAPSDIR "/%s", sakura.icon);
+ 	}
+ 	gtk_window_set_icon_from_file(GTK_WINDOW(sakura.main_window), icon_path, &gerror);
+ 	g_free(icon_path); icon_path=NULL;
+@@ -3050,7 +3050,7 @@ main(int argc, char **argv)
+ 
+ 	/* Localization */
+ 	setlocale(LC_ALL, "");
+-	localedir=g_strdup_printf("%s/locale", DATADIR);
++	localedir=g_strdup_printf("%s", LOCALEDIR);
+ 	textdomain(GETTEXT_PACKAGE);
+ 	bindtextdomain(GETTEXT_PACKAGE, localedir);
+ 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+-- 
+2.8.3
+
