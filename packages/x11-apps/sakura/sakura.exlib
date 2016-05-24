@@ -18,3 +18,7 @@ SLOT="0"
 
 REMOTE_IDS="freshmeat:sakura launchpad:sakura"
 
+CMAKE_SRC_CONFIGURE_PARAMS=(
+    -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/${PNVR}
+)
+
