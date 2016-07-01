@@ -1,7 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require debian-upstream [ suffix=.orig.tar.gz ]
+require debian-upstream [ suffix=orig.tar.gz ]
 
 SUMMARY="Displays a short text fullscreen"
 DESCRIPTION="Screen Message will display a given multi-line message as large as possible,
