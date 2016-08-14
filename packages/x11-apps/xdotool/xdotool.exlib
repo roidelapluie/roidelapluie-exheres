@@ -35,3 +35,10 @@ DEFAULT_SRC_INSTALL_PARAMS=(
     INSTALLMAN=/usr/share/man
 )
 
+src_prepare() {
+    default
+    edo sed -i \
+            -e "s#pkg-config#$(exhost --target)-pkg-config#" \
+            Makefile
+}
+
