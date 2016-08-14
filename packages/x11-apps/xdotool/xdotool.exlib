@@ -16,8 +16,9 @@ SLOT="0"
 
 DEPENDENCIES="
     build+run:
-        x11-libs/libXtst
         x11-libs/libX11
+        x11-libs/libXinerama
+        x11-libs/libXtst
 "
 
 DEFAULT_SRC_COMPILE_PARAMS=(
