@@ -4,7 +4,7 @@
 # Copyright 2012 Kevin Decherf <kevin@kdecherf.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require cmake freedesktop-desktop launchpad [ suffix=tar.bz2 branch=trunk ] sakura
+require freedesktop-desktop launchpad [ suffix=tar.bz2 branch=trunk ] sakura
 
 PLATFORMS="~amd64 ~x86"
 
@@ -17,6 +17,8 @@ DEPENDENCIES="
 "
 
 src_prepare() {
+    cmake_src_prepare
+
     # DOCDIR is unavailable
     edo sed 's/\/doc\/sakura/\/doc\/sakura-${VERSION}/' -i CMakeLists.txt
 }
