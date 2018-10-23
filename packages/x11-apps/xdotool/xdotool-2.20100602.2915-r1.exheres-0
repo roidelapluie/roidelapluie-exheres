@@ -3,5 +3,6 @@
 
 require xdotool
 
+DOWNLOADS="http://semicomplete.googlecode.com/files/${PNV}.tar.gz"
 PLATFORMS="~x86"
 
