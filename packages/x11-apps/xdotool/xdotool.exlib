@@ -1,6 +1,8 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+require github [ user=jordansissel tag=v${PV} ]
+
 SUMMARY="fake keyboard/mouse input, window management, and more"
 DESCRIPTION="This tool lets you simulate keyboard input and mouse activity, move and resize windows,
 etc. It does this using X11's XTEST extension and other Xlib functions.
@@ -9,7 +11,6 @@ Additionally, you can search for windows and move, resize, hide, and modify wind
 the title. If your window manager supports it, you can use xdotool to switch desktops, move windows
 between desktops, and change the number of desktops."
 HOMEPAGE="http://www.semicomplete.com/projects/xdotool/"
-DOWNLOADS="http://semicomplete.googlecode.com/files/${PNV}.tar.gz"
 
 LICENCES="as-is"
 SLOT="0"
