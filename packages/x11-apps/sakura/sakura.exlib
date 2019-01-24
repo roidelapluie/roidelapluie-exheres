@@ -1,7 +1,7 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require cmake
+require cmake [ api=2 ]
 
 SUMMARY="sakura is a vte-based terminal emulator."
 DESCRIPTION="sakura is a terminal emulator based on GTK and VTE. It's a terminal emulator with few
