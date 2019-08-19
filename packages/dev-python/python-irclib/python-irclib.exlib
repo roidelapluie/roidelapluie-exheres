@@ -1,7 +1,8 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require distutils [ python_dep=2.6 ] sourceforge [ suffix=tar.gz ]
+# TODO significantly updated since and now lives on https://pypi.org/project/irc
+require sourceforge [ suffix=tar.gz ] setup-py [ import=distutils blacklist=3 ]
 
 SUMMARY="Python IRC client library"
 
