@@ -3,5 +3,5 @@
 
 require python-irclib
 
-PLATFORMS="~x86"
+PLATFORMS="~x86 ~amd64"
 
