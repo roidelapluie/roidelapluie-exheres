@@ -6,9 +6,9 @@ DESCRIPTION="gnokii allows you to communicate with the phone over the serial cab
 connection (support depends mostly on the operating system level support), infrared connection and
 bluetooth connection.
 "
-HOMEPAGE="http://www.gnokii.org/"
+HOMEPAGE="https://www.gnokii.org/"
 MY_PVM="$(ever range 1-2 ${PV}).x"
-DOWNLOADS="http://www.gnokii.org/download/gnokii/${MY_PVM}/${PNV}.tar.gz"
+DOWNLOADS="https://www.gnokii.org/download/gnokii/${MY_PVM}/${PNV}.tar.gz"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -32,8 +32,8 @@ DEPENDENCIES="
         postgresql? ( dev-db/postgresql )
 "
 UPSTREAM_CHANGELOG=""
-UPSTREAM_DOCUMENTATION="http://wiki.gnokii.org/index.php/Main_Page"
-UPSTREAM_RELEASE_NOTES="http://www.gnokii.org/download/gnokii/${MY_PVM}/${PNV}.txt"
+UPSTREAM_DOCUMENTATION="https://wiki.gnokii.org/index.php/Main_Page"
+UPSTREAM_RELEASE_NOTES="https://www.gnokii.org/download/gnokii/${MY_PVM}/${PNV}.txt"
 
 export_exlib_phases src_configure
 
