@@ -1,45 +1,70 @@
 # Copyright 2010 Julien Pivotto <roidelapluie@gmail.com>
 # Copyright 2015 Xavier Barrachina <xv.barrachina@gmail.com>
+# Copyright 2024 Lee Clark <wymux@shoash.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require sourceforge [ suffix=src.tar.gz ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 ] ]
+require github [ user='ArmagetronAd' tag=v${PV} ] autotools [ supported_autoconf=[ 2.7 ] supported_automake=[ 1.16 ] ]
 
 SUMMARY="A simple action game modeled after the lightcycle sequence of the movie Tron."
 
 SLOT="0"
-MYOPTIONS=""
+MYOPTIONS="
+    ( providers: ijg-jpeg jpeg-turbo ) [[ number-selected = exactly-one ]]
+"
 LICENCES="GPL-2"
 
 DEPENDENCIES="
+    build:
+        virtual/pkg-config
     build+run:
-        dev-libs/libxml2:2.0[>=2.6.12]
-        media-libs/SDL:0[~>1.2.1]
-        media-libs/SDL_image:1[~>1.2.1]
-        media-libs/SDL_sound[>=1.0.3]
-        media-libs/jpeg:=[>=8]
-        media-libs/libpng:=[>=1.2]
-        sys-libs/zlib[>=1.2]
-        x11-dri/glu[>=9.0.0]
-        x11-libs/libICE[>=1.0.9]
-        x11-libs/libSM[>=1.2]
-        x11-libs/libX11[>=1.6.2]
+        dev-libs/libxml2:2.0[>=2.6.11]
+        media-libs/SDL:2
+        media-libs/SDL_image:2
+        media-libs/SDL_sound:2
+        media-libs/libpng:=
+        sys-libs/zlib
+        x11-dri/glu
+        x11-libs/libICE
+        x11-libs/libSM
+        x11-libs/libX11
+        providers:ijg-jpeg? ( media-libs/jpeg:= )
+        providers:jpeg-turbo? ( media-libs/libjpeg-turbo )
 "
 
-export_exlib_phases src_install
-
-export_exlib_phases src_prepare
-
-armagetronad_src_prepare(){
-    edo sed -i -e 's/png_check_sig/png_sig_cmp/' configure.ac
-    edo sed -i -e '/^SUBDIRS/s/desktop//' Makefile.am
-    eautoreconf
+src_prepare() {
+    # Prevent empty directory at:
+    # ${DESTDIR}${PREFIX}/share/icons/hicolor/$f/apps
+    edo sed -i '/mkdir -p ${icontarget}/d' batch/sysinstall.in
+    # Creates required version.m4 and add execute bit to scripts: ${WORK}/*.sh
+    edo ./bootstrap.sh
 }
 
+DEFAULT_SRC_CONFIGURE_PARAMS=(
+    --disable-automakedefaults
+    --disable-dirty
+    --disable-enginecoredebug
+    --disable-etc
+    --disable-games
+    --disable-initscripts
+    --disable-krawall
+    --disable-memmanager
+    --disable-multiver
+    --disable-respawn
+    --disable-restoreold
+    --disable-uninstall
+    --disable-useradd
+    --disable-zthreadtest
+    --enable-authentication
+    --enable-dedicated
+    --enable-desktop
+    --enable-glout
+    --enable-main
+    --enable-master
+    --enable-music
+    --with-x
+)
 
-armagetronad_src_install(){
-    dodir /usr
-    default
-}
-
-DEFAULT_SRC_CONFIGURE_PARAMS=( --disable-uninstall )
+DEFAULT_SRC_COMPILE_PARAMS=(
+    AR=${AR}
+)
 
